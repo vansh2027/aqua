@@ -1,6 +1,5 @@
 
 import React from 'react';
-import { motion } from 'framer-motion';
 import Layout from '@/components/Layout';
 import SurveyForm from '@/components/Survey/SurveyForm';
 import { ClipboardIcon, InfoIcon, AlertTriangle } from 'lucide-react';
@@ -9,22 +8,12 @@ const Survey = () => {
   return (
     <Layout>
       <div className="mb-6">
-        <motion.h1
-          className="text-3xl font-bold text-gray-900 mb-2"
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4 }}
-        >
+        <h1 className="text-3xl font-bold text-gray-900 mb-2">
           Water Survey Submission
-        </motion.h1>
-        <motion.p
-          className="text-gray-600"
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, delay: 0.1 }}
-        >
+        </h1>
+        <p className="text-gray-600">
           Contribute to our water monitoring database
-        </motion.p>
+        </p>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
@@ -33,12 +22,7 @@ const Survey = () => {
         </div>
         
         <div className="lg:col-span-1 space-y-6">
-          <motion.div 
-            className="glass-card p-6"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-          >
+          <div className="glass-card p-6">
             <div className="flex items-center space-x-3 mb-4">
               <ClipboardIcon className="h-5 w-5 text-aqua-600" />
               <h3 className="text-lg font-semibold text-gray-900">Survey Guidelines</h3>
@@ -66,14 +50,9 @@ const Survey = () => {
                 <span>Submit surveys preferably before 2:00 PM for optimal data comparability</span>
               </li>
             </ul>
-          </motion.div>
+          </div>
           
-          <motion.div 
-            className="glass-card p-6"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
-          >
+          <div className="glass-card p-6">
             <div className="flex items-center space-x-3 mb-4">
               <InfoIcon className="h-5 w-5 text-blue-600" />
               <h3 className="text-lg font-semibold text-gray-900">Parameter Info</h3>
@@ -87,7 +66,7 @@ const Survey = () => {
               
               <div>
                 <h4 className="font-medium text-gray-900 mb-1">Dissolved Oxygen</h4>
-                <p className="text-gray-700">Amount of O₂ in water. Healthy range: >5mg/L</p>
+                <p className="text-gray-700">Amount of O₂ in water. Healthy range: &gt;5mg/L</p>
               </div>
               
               <div>
@@ -100,14 +79,9 @@ const Survey = () => {
                 <p className="text-gray-700">Affects oxygen levels and biological activity.</p>
               </div>
             </div>
-          </motion.div>
+          </div>
           
-          <motion.div 
-            className="glass-card p-6 border-l-4 border-amber-500"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.4 }}
-          >
+          <div className="glass-card p-6 border-l-4 border-amber-500">
             <div className="flex items-start space-x-3">
               <AlertTriangle className="h-5 w-5 text-amber-500 flex-shrink-0 mt-0.5" />
               <div>
@@ -119,7 +93,7 @@ const Survey = () => {
                 </p>
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </Layout>

@@ -56,6 +56,10 @@ npm run build
 npm run preview
 ```
 
+## Author
+
+Vansh Mehta
+
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.

@@ -1,9 +1,8 @@
 
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
-import { DropdownMenu, DropletIcon, MenuIcon, X } from 'lucide-react';
+import { DropletIcon, MenuIcon, X } from 'lucide-react';
 
 const NavItem = ({ href, label, active }: { href: string; label: string; active: boolean }) => (
   <Link 
@@ -17,12 +16,8 @@ const NavItem = ({ href, label, active }: { href: string; label: string; active:
   >
     {label}
     {active && (
-      <motion.div 
+      <div 
         className="absolute bottom-0 left-0 right-0 h-0.5 bg-aqua-500 rounded-full"
-        layoutId="navbar-indicator"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.3 }}
       />
     )}
   </Link>
@@ -70,14 +65,11 @@ const Navbar = () => {
               to="/" 
               className="flex items-center space-x-2 text-aqua-600 transition-all duration-300 hover:text-aqua-700"
             >
-              <motion.div 
+              <div 
                 className="w-8 h-8 rounded-lg bg-gradient-to-br from-aqua-400 to-aqua-600 flex items-center justify-center"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                transition={{ duration: 0.2 }}
               >
                 <DropletIcon size={20} className="text-white" />
-              </motion.div>
+              </div>
               <span className="text-xl font-bold tracking-tight">AquaSurveyor</span>
             </Link>
           </div>
@@ -92,14 +84,12 @@ const Navbar = () => {
                 active={location.pathname === item.href}
               />
             ))}
-            <motion.button
-              className="ml-4 px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-aqua-500 to-aqua-600 rounded-md shadow-sm button-glow"
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              transition={{ duration: 0.2 }}
+            <Link
+              to="/sign-in"
+              className="ml-4 px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-aqua-500 to-aqua-600 rounded-md shadow-sm"
             >
               Sign In
-            </motion.button>
+            </Link>
           </nav>
 
           {/* Mobile menu button */}
@@ -116,12 +106,8 @@ const Navbar = () => {
 
       {/* Mobile menu */}
       {isMobileMenuOpen && (
-        <motion.div 
+        <div 
           className="md:hidden"
-          initial={{ opacity: 0, height: 0 }}
-          animate={{ opacity: 1, height: 'auto' }}
-          exit={{ opacity: 0, height: 0 }}
-          transition={{ duration: 0.3 }}
         >
           <div className="px-4 pt-2 pb-4 space-y-1 bg-white/95 backdrop-blur-md border-b border-gray-200/50">
             {navItems.map((item) => (
@@ -138,11 +124,11 @@ const Navbar = () => {
                 {item.label}
               </Link>
             ))}
-            <button className="w-full mt-2 px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-aqua-500 to-aqua-600 rounded-md">
+            <Link to="/sign-in" className="block w-full mt-2 px-4 py-2 text-sm font-medium text-white bg-gradient-to-r from-aqua-500 to-aqua-600 rounded-md">
               Sign In
-            </button>
+            </Link>
           </div>
-        </motion.div>
+        </div>
       )}
     </header>
   );

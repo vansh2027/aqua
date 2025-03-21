@@ -68,26 +68,6 @@
   ::-webkit-scrollbar-thumb:hover {
     @apply bg-black/20;
   }
-
-  /* Animation classes */
-  .page-transition-enter {
-    @apply opacity-0;
-  }
-  .page-transition-enter-active {
-    @apply opacity-100 transition-opacity duration-300;
-  }
-  .page-transition-exit {
-    @apply opacity-100;
-  }
-  .page-transition-exit-active {
-    @apply opacity-0 transition-opacity duration-300;
-  }
-  
-  .water-ripple-bg::before {
-    content: '';
-    @apply absolute inset-0 bg-aqua-100/40 rounded-full animate-water-ripple;
-    z-index: -1;
-  }
 }
 
 @layer components {
@@ -105,18 +85,5 @@
   
   .glass-card:hover {
     @apply shadow-lg border-white/40;
-  }
-
-  .button-glow {
-    @apply relative overflow-hidden;
-  }
-  
-  .button-glow::after {
-    content: '';
-    @apply absolute inset-0 rounded-md bg-white/20 opacity-0 transition-opacity duration-300;
-  }
-  
-  .button-glow:hover::after {
-    @apply opacity-100;
   }
 }
